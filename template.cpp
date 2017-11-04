@@ -34,6 +34,7 @@ typedef vector<pii> vpii;
 
 const double pi = 3.14159265358979323846264338327950288419716939937510582097494459230;
 
+vi vec(1000000);
 
 int main()
 {
@@ -42,5 +43,10 @@ int main()
 	while(t--)
 	{
 		printf("%0.2lf\n",pi);
+		int n=1;
+		//scanf("%d",&n);
+		//fr(i,0,n){
+		//	scanf("%d",&vec[i]);
+		//}
 	}
 }
