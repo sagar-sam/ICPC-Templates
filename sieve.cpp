@@ -34,13 +34,42 @@ typedef vector<pii> vpii;
 
 const double pi = 3.14159265358979323846264338327950288419716939937510582097494459230;
 
+vi sieve(1000000);
+
+void calculate_sieve()
+{
+	for(int i=0;i<1000000;i++)
+	{
+		sieve[i]=-1;
+	}
+
+	for(int i=4;i<1000000;i+=2)
+	{
+		sieve[i]=2;
+	}
+
+	for(int i=3;i*i<1000000;i+=2)
+	{
+		if(sieve[i]==-1)
+		{
+			for(int j=i*i;j<1000000;j+=i)
+			{
+				if(sieve[j]==-1)
+				{
+					sieve[j]=i;
+				}
+			}
+		}
+	}
+}
 
 int main()
 {
+	calculate_sieve();
 	int t=1;
 //	scanf("%d",&t);
 	while(t--)
 	{
-		printf("%0.2lf\n",pi);
+		printf("%d %d %d %d %d %d\n",sieve[5],sieve[15],sieve[10],sieve[25],sieve[100],sieve[101]);
 	}
 }
